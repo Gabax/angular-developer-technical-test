@@ -1,0 +1,15 @@
+<app-search-bar (searchedValueEmitter)="searchGithubUsers($event)"></app-search-bar>
+
+<div class="search-results">
+    <div *ngIf="users.length > 0; else noResults">
+        <h1>Search results</h1>
+        <div class="card-container">
+            <app-card *ngFor="let user of users" [user]="user"></app-card>
+        </div>
+
+    </div>
+
+    <ng-template #noResults>
+        <h1>No users found</h1>
+    </ng-template>
+</div>

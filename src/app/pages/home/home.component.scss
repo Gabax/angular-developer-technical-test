@@ -1,0 +1,18 @@
+app-search-bar {
+  margin: 20px 0;
+}
+
+.search-results {
+  margin-top: 30px;
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    app-card {
+      margin: 15px;
+      cursor: pointer;
+    }
+  }
+}

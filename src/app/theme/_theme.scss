@@ -1,0 +1,70 @@
+$background-color: #eeeeee;
+$background-color-dark: #171a29;
+
+$toolbar-color: #1976d2;
+$toolbar-color-dark: #10121d;
+
+$text-primary-color: #3f3844;
+$text-primary-color-dark: #ffffff;
+
+$accent-color: #1976d2;
+$accent-color-dark: #f8e71c;
+
+$theme-icon-color: #f8e71c;
+$theme-icon-color-dark: #ffffff;
+
+$icon-color: #6e6e6e;
+$icon-color-dark: #f8e71c;
+
+$border-box-color: #3f3844;
+$border-box-color-dark: #f8e71c;
+
+$background-box-color: #ffffff;
+$background-box-color-dark: #2f3640;
+
+$colors: (
+  --background-color: (
+    $background-color,
+    $background-color-dark,
+  ),
+  --toolbar-color: (
+    $toolbar-color,
+    $toolbar-color-dark,
+  ),
+  --text-primary-color: (
+    $text-primary-color,
+    $text-primary-color-dark,
+  ),
+  --accent-color: (
+    $accent-color,
+    $accent-color-dark,
+  ),
+  --theme-icon-color: (
+    $theme-icon-color,
+    $theme-icon-color-dark,
+  ),
+  --icon-color: (
+    $icon-color,
+    $icon-color-dark,
+  ),
+  --border-box: (
+    $border-box-color,
+    $border-box-color-dark,
+  ),
+  --background-box-color: (
+    $background-box-color,
+    $background-box-color-dark,
+  ),
+);
+
+.theme-light {
+  @each $name, $color in $colors {
+    #{$name}: nth($color, 1);
+  }
+}
+
+.theme-dark {
+  @each $name, $color in $colors {
+    #{$name}: nth($color, 2);
+  }
+}

@@ -9,6 +9,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GithubService } from './services/github.service';
+import { UserComponent } from './pages/user/user.component';
+import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 
 export function themeFactory(themeService: ThemingService) {
   return () => themeService.setThemeOnStart();
@@ -20,6 +22,8 @@ export function themeFactory(themeService: ThemingService) {
     SearchBarComponent,
     CardComponent,
     HomeComponent,
+    UserComponent,
+    TabBarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [

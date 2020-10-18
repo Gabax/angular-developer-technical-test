@@ -1,0 +1,29 @@
+<div class="user-container">
+    <img [src]="user.avatar_url" alt="Avatar">
+    <div class="user-info">
+        <div class="info" *ngIf="user.name">
+            <span class="material-icons">person</span>
+            <span>{{ user.name }}</span>
+        </div>
+        <div class="info" *ngIf="user.email">
+            <span class="material-icons">mail</span>
+            <span>{{ user.email }}</span>
+        </div>
+        <div class="info" *ngIf="user.company">
+            <span class="material-icons">work</span>
+            <span>{{ user.company }}</span>
+        </div>
+        <div class="info" *ngIf="user.location">
+            <span class="material-icons">location_on</span>
+            <span>{{ user.location }}</span>
+        </div>
+        <div class="info" *ngIf="user.blog">
+            <span class="material-icons">link</span>
+            <span>{{ user.blog }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="user-container">
+    <app-tab-bar></app-tab-bar>
+</div>

@@ -9,7 +9,6 @@
   padding: 10px;
 
   .search-btn {
-    float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -30,5 +29,19 @@
     max-width: 480px;
     font-weight: bold;
     color: var(--text-primary-color);
+  }
+}
+
+@media screen and (min-width: 557px) {
+  .search-btn {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .search-btn {
+    float: none;
+    position: absolute;
+    right: 10px;
   }
 }

@@ -12,7 +12,7 @@ export class GithubService {
 
   constructor(private http: HttpClient) {}
 
-  searchUser(value: string) {
+  searchUsers(value: string) {
     let params = new HttpParams();
     params = params.append('q', value);
 
@@ -22,8 +22,14 @@ export class GithubService {
     });
   }
 
-  searchUsers() {
+  getUsers() {
     return this.http.get(`${environment.endPoint}/users`, {
+      headers: this.httpHeaders,
+    });
+  }
+
+  getUser(username) {
+    return this.http.get(`${environment.endPoint}/users/${username}`, {
       headers: this.httpHeaders,
     });
   }

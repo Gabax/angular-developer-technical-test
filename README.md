@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Documentation
+
+app site: https://gabax.github.io/angular-developer-technical-test/
+
+When you land on the application, you find the search bar to look for Github's users. The search works only if the you type at least 3 characters, otherwise pop up
+a message saying so. After meeting the conditions, the applications shows you the users who best match your search criteria.
+If you want to know more about a user, click on the card to bring up more details in another page. There you can see, in addition to some personal information, the user's repositories and followers.
+If you want to change theme, you can do it clicking on the sun in top right corner.

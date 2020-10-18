@@ -1,5 +1,6 @@
 <div class="search-box">
-  <input type="text" class="search-txt" placeholder="Search..." #searchValue />
+  <label for="search" hidden></label>
+  <input id="search" type="text" class="search-txt" placeholder="Search..." #searchValue />
   <a class="search-btn" (click)="searchedValue(searchValue.value)">
     <span class="material-icons"> search </span>
   </a>

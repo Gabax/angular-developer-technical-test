@@ -1,4 +1,4 @@
-<div class="user-container">
+<div class="user-container" *ngIf="user">
     <img [src]="user.avatar_url" alt="Avatar">
     <div class="user-info">
         <div class="info" *ngIf="user.name">
@@ -24,6 +24,6 @@
     </div>
 </div>
 
-<div class="user-container">
-    <app-tab-bar></app-tab-bar>
+<div class="user-container" *ngIf="user">
+    <app-tab-bar [user]="user"></app-tab-bar>
 </div>

@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { GithubService } from './services/github.service';
 import { UserComponent } from './pages/user/user.component';
 import { TabBarComponent } from './components/tab-bar/tab-bar.component';
+import { ChunkedForDirective } from './directives/chunked-for.directive';
 
 export function themeFactory(themeService: ThemingService) {
   return () => themeService.setThemeOnStart();
@@ -24,6 +25,7 @@ export function themeFactory(themeService: ThemingService) {
     HomeComponent,
     UserComponent,
     TabBarComponent,
+    ChunkedForDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [

@@ -8,21 +8,14 @@ import { GithubService } from 'src/app/services/github.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  users: any[];
+  users;
 
   constructor(private githubService: GithubService, private router: Router) {}
 
   ngOnInit(): void {}
 
   searchGithubUsers(value: string) {
-    this.githubService.getUsers().subscribe(
-      (result: any[]) => {
-        this.users = result;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    this.users = this.githubService.getUsers();
   }
 
   userDetail(user) {

@@ -1,7 +1,33 @@
-<div>
-    <nav class="tab-link">
-        <a>repositories</a>
-        <a>followers</a>
-        <hr />
-    </nav>
+<div class="tabs">
+    <div class="tab-2">
+        <label for="tab2-1">Repositories ({{user.public_repos}})</label>
+        <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+        <div class="tab-container">
+            <ng-container *chunkedFor="let reposList of repos; by: 10; nextFn as nextChunk; hasNext as hasMoreChunk">
+                <div *ngFor="let repo of reposList" class="tab-item">
+                    <span class="material-icons">folder</span>
+                    <span>{{repo.name}}</span>
+                </div>
+                <div *ngIf="hasMoreChunk">
+                    <div class="show-more" title="Vedi altri" (click)="nextChunk()">Show more</div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="tab-2">
+        <label for="tab2-2" (click)="loadFollowers()">Followers ({{user.followers}})</label>
+        <input id="tab2-2" name="tabs-two" type="radio">
+        <div class="tab-container">
+            <ng-container
+                *chunkedFor="let followersList of followers; by: 10; nextFn as nextChunk; hasNext as hasMoreChunk">
+                <div *ngFor="let follower of followersList" class="tab-item">
+                    <span class="material-icons">persone</span>
+                    <span>{{follower.login}}</span>
+                </div>
+                <div *ngIf="hasMoreChunk">
+                    <div class="show-more" title="Vedi altri" (click)="nextChunk()">Show more</div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </div>

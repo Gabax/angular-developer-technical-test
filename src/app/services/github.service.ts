@@ -33,4 +33,19 @@ export class GithubService {
       headers: this.httpHeaders,
     });
   }
+
+  getUserRepos(username) {
+    return this.http.get(`${environment.endPoint}/users/${username}/repos`, {
+      headers: this.httpHeaders,
+    });
+  }
+
+  getUserFollowers(username) {
+    return this.http.get(
+      `${environment.endPoint}/users/${username}/followers`,
+      {
+        headers: this.httpHeaders,
+      }
+    );
+  }
 }

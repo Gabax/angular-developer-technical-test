@@ -3,10 +3,10 @@
 </div>
 
 <div class="search-results">
-    <div *ngIf="users && users.length > 0; else noResults">
+    <div *ngIf="users; else noResults">
         <h1>Search results</h1>
         <div class="card-container">
-            <app-card *ngFor="let user of users" [user]="user" (clickEmitter)="userDetail(user)"></app-card>
+            <app-card *ngFor="let user of users | async" [user]="user" (clickEmitter)="userDetail(user)"></app-card>
         </div>
 
     </div>

@@ -9,13 +9,27 @@ import { GithubService } from 'src/app/services/github.service';
 })
 export class HomeComponent implements OnInit {
   users;
+  errorMessage: string = 'Type at least 3 characters.';
+  showError: boolean = false;
 
   constructor(private githubService: GithubService, private router: Router) {}
 
   ngOnInit(): void {}
 
   searchGithubUsers(value: string) {
-    this.users = this.githubService.getUsers();
+    if (value.length >= 3) {
+      this.githubService.searchUser(value).subscribe(
+        (result) => {
+          this.users = result['items'];
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      this.showError = false;
+    } else {
+      this.showError = true;
+    }
   }
 
   userDetail(user) {
